@@ -1,4 +1,6 @@
 class MainsController < ApplicationController
+  before_action :set_main, only: [:show, :edit, :update]
+
   def index
     @mains = Main.all
 
@@ -18,15 +20,14 @@ class MainsController < ApplicationController
   end
 
   def show
-    @main = Main.find(params[:id])
+
   end
 
   def edit
-    @main = Main.find(params[:id])
+
   end
 
   def update
-    @main = Main.find(params[:id])
     if @main.update(main_params)
       redirect_to mains_path, notice: "ツイートを編集しました!"
     else
@@ -39,4 +40,7 @@ class MainsController < ApplicationController
   def main_params
     params.require(:main).permit(:content)
   end
+
+  def set_main
+    @main = Main.find(params[:id])
 end
