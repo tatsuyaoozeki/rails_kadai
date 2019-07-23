@@ -12,6 +12,9 @@ class MainsController < ApplicationController
     redirect_to new_main_path
   end
 
+  def show
+  end
+
   private
 
   def main_params

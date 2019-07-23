@@ -8,6 +8,7 @@
 <% @mains.each do |main| %>
   <tr>
     <td><%= main.content %></td>
+    <td><%= link_to '詳細を確認する', main_path(main.id) %></td>
   </tr>
 <% end %>
 </table>
