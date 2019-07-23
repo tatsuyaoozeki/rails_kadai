@@ -40,6 +40,10 @@ class MainsController < ApplicationController
     redirect_to mains_path, notice: "ツイートを削除しました!"
   end
 
+  def confirm
+    @main = Main.new(main_params)
+  end
+
 
   private
 

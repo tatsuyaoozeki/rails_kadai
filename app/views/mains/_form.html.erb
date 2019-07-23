@@ -1,4 +1,4 @@
-<%= form_with(model: @main, local: true) do |form| %>
+<%= form_with(model: @main, local: true, url: confirm_mains_path) do |form| %>
   <% if @main.errors.any? %>
     <div id="error_explanation">
       <h2><%= @main.errors.count %>件のエラーがあります。</h2>
