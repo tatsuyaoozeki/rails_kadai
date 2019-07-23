@@ -7,7 +7,13 @@ class MainsController < ApplicationController
   end
 
   def create
-    Main.create(content: params[:main][:content])
-    redirect_to "new_main_path"
+    Main.create(main_params)
+    redirect_to new_main_path
+  end
+
+  private
+
+  def main_params
+    params.require(:main).permit(:content)
   end
 end
