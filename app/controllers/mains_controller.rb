@@ -43,4 +43,5 @@ class MainsController < ApplicationController
 
   def set_main
     @main = Main.find(params[:id])
+  end
 end
