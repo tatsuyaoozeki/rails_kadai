@@ -1,5 +1,5 @@
 class MainsController < ApplicationController
-  before_action :set_main, only: [:show, :edit, :update]
+  before_action :set_main, only: [:show, :edit, :update, :destroy]
 
   def index
     @mains = Main.all
@@ -34,6 +34,12 @@ class MainsController < ApplicationController
       render 'new'
     end
   end
+
+  def destroy
+    @main.destroy
+    redirect_to mains_path, notice: "ツイートを削除しました!"
+  end
+
 
   private
 
