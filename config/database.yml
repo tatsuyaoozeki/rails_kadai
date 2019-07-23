@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: twitalk_development
+
+test:
+  <<: *default
+  database: twitalk_test
+
+production:
+  <<: *default
+  database: twitalk_production
+  username: twitalk
+  password: <%= ENV['TWITALK_DATABASE_PASSWORD'] %>
