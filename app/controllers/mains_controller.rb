@@ -13,7 +13,7 @@ class MainsController < ApplicationController
   def create
     @main = Main.create(main_params)
     if @main.save
-      redirect_to new_main_path, notice: "ツイートしました!"
+      redirect_to mains_path, notice: "ツイートしました!"
     else
       render 'new'
     end
