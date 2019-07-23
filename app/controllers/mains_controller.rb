@@ -13,6 +13,7 @@ class MainsController < ApplicationController
   end
 
   def show
+    @main = Main.find(params[:id])
   end
 
   private
