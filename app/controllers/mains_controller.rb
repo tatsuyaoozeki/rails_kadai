@@ -1,6 +1,7 @@
 class MainsController < ApplicationController
   def index
     @mains = Main.all
+
   end
 
   def new
@@ -17,6 +18,10 @@ class MainsController < ApplicationController
   end
 
   def show
+    @main = Main.find(params[:id])
+  end
+
+  def edit
     @main = Main.find(params[:id])
   end
 
