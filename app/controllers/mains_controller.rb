@@ -25,6 +25,15 @@ class MainsController < ApplicationController
     @main = Main.find(params[:id])
   end
 
+  def update
+    @main = Main.find(params[:id])
+    if @main.update(main_params)
+      redirect_to mains_path, notice: "ツイートを編集しました!"
+    else
+      render 'new'
+    end
+  end
+
   private
 
   def main_params
