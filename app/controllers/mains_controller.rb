@@ -8,8 +8,12 @@ class MainsController < ApplicationController
   end
 
   def create
-    Main.create(main_params)
-    redirect_to new_main_path
+    @main = Main.create(main_params)
+    if @main.save
+      redirect_to new_main_path, notice: "ツイートしました!"
+    else
+      render 'new'
+    end
   end
 
   def show
