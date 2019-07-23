@@ -3,5 +3,6 @@ class MainsController < ApplicationController
   end
 
   def new
+    @main = Main.new
   end
 end
