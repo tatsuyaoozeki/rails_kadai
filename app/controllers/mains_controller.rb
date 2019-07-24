@@ -2,7 +2,7 @@ class MainsController < ApplicationController
   before_action :set_main, only: [:show, :edit, :update, :destroy]
 
   def index
-    @mains = Main.all
+    @mains = Main.all.reverse_order
 
   end
 
@@ -12,10 +12,14 @@ class MainsController < ApplicationController
 
   def create
     @main = Main.create(main_params)
-    if @main.save
-      redirect_to mains_path, notice: "ツイートしました!"
+    if params[:back]
+      render :new
     else
-      render 'new'
+      if @main.save
+        redirect_to mains_path, notice: "ツイートしました!"
+      else
+        render 'new'
+      end
     end
   end
 
@@ -42,8 +46,8 @@ class MainsController < ApplicationController
 
   def confirm
     @main = Main.new(main_params)
+    render :new if @main.invalid?
   end
-
 
   private
 
@@ -54,4 +58,5 @@ class MainsController < ApplicationController
   def set_main
     @main = Main.find(params[:id])
   end
+
 end

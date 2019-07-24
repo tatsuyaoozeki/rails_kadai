@@ -1,20 +1,19 @@
-<h1>ツイート一覧</h1>
+<body id="top" class="medium">
+  <div id="wrapper">
 
-<p><%= notice %></p>
+  <p><%= notice %></p>
 
-<table>
-  <tr>
-    <th>内容</th>
-  </tr>
-
-<% @mains.each do |main| %>
-  <tr>
-    <td><%= main.content %></td>
-    <td><%= link_to '詳細を確認する', main_path(main.id) %></td>
-    <td><%= link_to 'ツイートを編集する', edit_main_path(main.id), data: { confirm: '本当に編集していいですか？' } %></td>
-    <td><%= link_to 'ツイートを削除する', main_path(main.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<%= link_to '新しくツイートを投稿する', new_main_path %>
+    <% @mains.each do |main| %>
+    <div class="main clearfix">
+      <nav class="content">
+        <ul>
+          <li><%= main.content %></li>
+          <li class="power"><%= link_to '詳細', main_path(main.id) %></li>
+          <li class="power"><%= link_to '編集', edit_main_path(main.id), data: { confirm: '本当に編集していいですか？' } %></li>
+          <li class="power"><%= link_to '削除', main_path(main.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %></li>
+        </ul>
+      </nav>
+    </div>
+    <% end %>
+  </div>
+</body>

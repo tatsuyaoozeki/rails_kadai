@@ -1,3 +1,29 @@
-// Place all the styles related to the mains controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// 投稿が表示される所の大枠
+div#wrapper{
+  background-color: #efefef;
+  max-width: 960px;
+  margin: 100px 0px 100px 400px;
+  box-shadow: 0px 0px 6px #efefef;
+  z-index: 1000;
+}
+
+// ツイートの設定
+nav.content{
+  background-color: #fff;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  height: 150px;
+  text-overflow: hidden;
+  position: relative;
+}
+
+// 黒点を消す
+nav.content li{
+  list-style-type: none;
+}
+
+// 詳細・編集・削除の配置
+li.power{
+  float: left;
+  margin-left: 50px;
+}

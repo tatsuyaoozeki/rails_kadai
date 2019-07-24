@@ -12,4 +12,116 @@
  *
  *= require_tree .
  *= require_self
+ *= require font-awesome
  */
+
+/* 全体の背景 */
+body{
+  background-color: #efefef;
+  font-family: sans-serif;
+}
+
+/* ヘッダー設定 */
+header{
+  background-color: rgba(0,0,0,0.8);
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  bottom: auto;
+  z-index: 2;
+}
+
+header div{
+  max-width: 960px;
+  margin: 0px auto;
+}
+
+/* ヘッダーのアイコン */
+.header figure i{
+  color: #fff;
+  font-size: 40px;
+  float: left;
+  padding: 5px;
+}
+
+/* ヘッダーのアプリ名 */
+.header figure i a{
+  margin: 0px 10px;
+  text-decoration: none;
+  color: #fff;
+}
+
+/* ヘッダーの要素にマウスが乗ったら以下を適用 */
+.header figure i:hover{
+  color: #1da1f2;
+  cursor: pointer;
+}
+
+/* サイドメニュー設定 */
+nav#side_menu{
+  width: 20%;
+  float: left;
+}
+
+/* コンテンツメニューを高さを合わせるため */
+nav#side_menu ul{
+  margin-top: 0px;
+}
+
+/* 各メニューのスタイル */
+#side_menu ul li{
+  background-color: #efefef;
+  height: 100px;
+  margin-bottom: 0px;
+  list-style-type: none;
+}
+
+/* メニューの見た目 */
+#side_menu ul li a{
+  background-color: #fff;
+  color: #000;
+  text-decoration: none;
+  display: block;
+  padding: 20px;
+  border-radius: 25px;
+}
+
+/* サイドメニューにマウスが乗ったら以下の適用 */
+#side_menu ul li a:hover{
+  transition-property: background-color;
+  background-color: #1da1f2;
+  color: #fff;
+}
+
+/* フッターの設定 */
+footer{
+  width: 100%;
+  background-color: rgba(0,0,0,0.8);
+  position: fixed;
+  top: auto;
+  right: 0px;
+  bottom: 0px;
+  left:0px;
+  z-index: 1;
+}
+
+/* フッターの要素の配置 */
+ul.footer li{
+  float: left;
+  width:25%;
+  vertical-align: middle;
+  text-align:center;
+  list-style-type: none;
+}
+
+/* フッター要素の色 */
+ul.footer li p {
+  color:#fff;
+}
+
+/* 要素にマウスが乗ったら以下の処理 */
+ul.footer li p:hover{
+  color: #1da1f2;
+  cursor: pointer;
+}
